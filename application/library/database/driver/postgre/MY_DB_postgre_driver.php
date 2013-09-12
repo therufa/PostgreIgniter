@@ -47,7 +47,7 @@ class MY_DB_postgre_driver extends CI_DB_postgre_driver
 			$indicator = strtoupper($indicator);
 			$sql .= ' '.$indicator.' ';
 
-			$sql .= ( (bool) preg_match('/^((?!STDIN|STDOUT).)*$/i', $target)) ? '\''.$target.'\'' : $target;
+			$sql .= ( (bool) preg_match('/^((?!STDIN|STDOUT|\(.*\)).)*$/i', $target)) ? '\''.$target.'\'' : $target;
 		}
 
 		// Append options to the query string
