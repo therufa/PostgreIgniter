@@ -112,7 +112,7 @@ class MY_DB_postgre_driver extends CI_DB_postgre_driver
 			$line .= "\t";
 		}
 
-		return $this->put_line( $line, $escape );
+		return $this->put_line( rtrim($line, "\t") , $escape );
 	}
 
 	// --------------------------------------------------------------------
