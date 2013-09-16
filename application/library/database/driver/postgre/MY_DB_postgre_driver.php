@@ -125,7 +125,7 @@ class MY_DB_postgre_driver extends CI_DB_postgre_driver
 	 */
 	public function copy_end( $insert_ending = FALSE )
 	{
-		( $insert_ending === TRUE ) && $this->put_line('\,');
+		( $insert_ending === TRUE ) && $this->copy_put_line('\,');
 
 		return @pg_end_copy($this->conn_id);
 	}
